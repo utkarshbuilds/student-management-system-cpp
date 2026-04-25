@@ -1,7 +1,11 @@
 #include <iostream>
+#include "student.h"
+#include <vector>
 using namespace std;
 
-int main() {
+int main() 
+{
+    vector<Student> students;
     int choice;
 
     while (true) {
@@ -13,10 +17,15 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-            cout << "Add Student selected\n";
+            Student s;
+            s.input();
+            students.push_back(s);
         }
         else if (choice == 2) {
-            cout << "View Students selected\n";
+            for (auto &s : students) {
+                s.display();
+                cout << "----------------\n";
+            }
         }
         else if (choice == 3) {
             break;
@@ -28,3 +37,4 @@ int main() {
 
     return 0;
 }
+
