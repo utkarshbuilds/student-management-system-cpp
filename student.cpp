@@ -4,19 +4,19 @@ using namespace std;
 
 void Student::input()
 {
-    cout << "Enter id: " << endl;
-    cin >> id;
+    cout << "Enter id: ";
+    cin  >> id;
 
-    cout << "Enter name: " << endl;
-    cin >> name;   
+    cout << "Enter name: ";
+    cin >> name;
 
-    cout << "Enter grade: " << endl;
-    cin >> grade;
+    cout << "Enter age: ";
+    cin >> age;
 }
 
 void Student::display()
 {
     cout << "ID: " << id << endl;
     cout << "Name: " << name << endl;
-    cout << "Grade: " << grade << endl;
+    cout << "Age: " << age << endl;
 }

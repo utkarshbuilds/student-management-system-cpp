@@ -7,7 +7,7 @@ using namespace std;
 class Student {
 public:
     string name;
-    string grade;   
+    int age;
     int id;
 
 public:
