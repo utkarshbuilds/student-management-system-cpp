@@ -1,7 +1,10 @@
-#ifndef Database_H
-#define Database_H
+#ifndef DATABASE_H
+#define DATABASE_H
 
 #include "sqlite3.h"
+#include <string>
+using namespace std;
+
 class Database 
 {
     public:
@@ -9,6 +12,8 @@ class Database
     Database();
     ~Database();
     void createTable();
+    void addStudent(int id, string name, int age);
+    void viewStudents();
 };
     
 #endif

@@ -2,21 +2,15 @@
 #include <iostream>
 using namespace std;
 
-void Student::input()
-{
-    cout << "Enter id: ";
-    cin  >> id;
-
-    cout << "Enter name: ";
+void Student::input() {
+    cout << "Enter ID: ";
+    cin >> id;
+    cout << "Enter Name: ";
     cin >> name;
-
-    cout << "Enter age: ";
+    cout << "Enter Age: ";
     cin >> age;
 }
 
-void Student::display()
-{
-    cout << "ID: " << id << endl;
-    cout << "Name: " << name << endl;
-    cout << "Age: " << age << endl;
+void Student::display() {
+    cout << "ID: " << id << ", Name: " << name << ", Age: " << age << endl;
 }

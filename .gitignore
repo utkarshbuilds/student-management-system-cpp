@@ -1,3 +1,9 @@
+# SQLite
+sqlite3.c
+sqlite3.h
+*.db
+
+# build files
 *.exe
 *.o
-*.out
+*.outd
