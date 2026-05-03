@@ -7,9 +7,40 @@ using namespace std;
 
 int main()
 {
+
     Database db;
     db.createTable();
     int choice;
+
+    int id, age;
+    string name;
+
+    while (true)
+    {
+        cout << "Enter ID: ";
+        if (!(cin >> id))
+        {
+            cout << "Invalid ID\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
+        cout << "Enter Name: ";
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "Enter Age: ";
+        if (!(cin >> age) || age <= 0 || age > 120)
+        {
+            cout << "Invalid Age\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
+        break;
+    }
 
     while (true)
     {
@@ -26,9 +57,7 @@ int main()
         if (choice == 1)
         {
             Student s;
-            s.input();
-            db.addStudent(s.id, s.name, s.age);
-            
+            db.addStudent(id, name, age);
         }
         else if (choice == 2)
         {
@@ -71,8 +100,5 @@ int main()
         }
     }
 
-    
-
     return 0;
 }
-
