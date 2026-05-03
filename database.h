@@ -14,6 +14,9 @@ class Database
     void createTable();
     void addStudent(int id, string name, int age);
     void viewStudents();
+    void searchStudent(int id);
+    void deleteStudent(int id);
+    void updateStudent(int id, std::string name, int age);
 };
     
 #endif
