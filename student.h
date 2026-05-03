@@ -11,7 +11,6 @@ public:
     int id;
 
 public:
-    void input();
     void display();
 };
 
