@@ -2,6 +2,7 @@
 sqlite3.c
 sqlite3.h
 *.db
+*student.db
 
 # build files
 *.exe

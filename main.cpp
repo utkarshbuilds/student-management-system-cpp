@@ -1,7 +1,9 @@
 #include <iostream>
 #include "student.h"
-#include <vector>
 #include "database.h"
+#include <limits>
+#include <string>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
@@ -17,29 +19,37 @@ int main()
 
     while (true)
     {
+        // --- VALIDATE ID ---
         cout << "Enter ID: ";
-        if (!(cin >> id))
+        while (!(cin >> id))
         {
-            cout << "Invalid ID\n";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            continue;
+            cout << "Invalid. Enter a numeric ID: ";
+            cin.clear(); // Reset the error flag
+
+            // Manually clear the buffer (The "Trash Collector")
+            char ch;
+            while (cin.get(ch) && ch != '\n')
+                ;
         }
 
+        // --- HANDLE NAME ---
         cout << "Enter Name: ";
-        cin.ignore();
+        // Clear the leftover newline from the ID input
+        char ch;
+        while (cin.get(ch) && ch != '\n');
         getline(cin, name);
 
+        // --- VALIDATE AGE ---
         cout << "Enter Age: ";
-        if (!(cin >> age) || age <= 0 || age > 120)
+        while (!(cin >> age) || age <= 0 || age > 120)
         {
-            cout << "Invalid Age\n";
+            cout << "Invalid Age (1-120). Try again: ";
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            continue;
+            while (cin.get(ch) && ch != '\n')
+                ;
         }
 
-        break;
+        break; // Success!
     }
 
     while (true)
@@ -65,9 +75,6 @@ int main()
         }
         else if (choice == 3)
         {
-            int id;
-            string name;
-            int age;
             cout << "Enter student ID to update: ";
             cin >> id;
             cout << "Enter new name: ";
