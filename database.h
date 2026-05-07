@@ -12,7 +12,7 @@ class Database
     Database();
     ~Database();
     void createTable();
-    void addStudent(int id, string name, int age);
+    void addStudent(string program, string addNo, int section, int id, string name, int age);
     void viewStudents();
     void searchStudent(int id);
     void deleteStudent(int id);
