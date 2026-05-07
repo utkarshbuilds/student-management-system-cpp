@@ -24,6 +24,9 @@ void Database::createTable()
 {
     const char *sql =
         "CREATE TABLE IF NOT EXISTS students ("
+        "program TEXT, "
+        "addmission_number, "
+        "section INTEGER, "
         "id INTEGER PRIMARY KEY, "
         "name TEXT, "
         "age INTEGER);";
@@ -39,9 +42,9 @@ void Database::createTable()
     }
 }
 
-void Database::addStudent(int id, string name, int age)
+void Database::addStudent(string program, string addNo, int section, int id, string name, int age)
 {
-    string sql = "INSERT INTO students (id, name, age) VALUES (" + to_string(id) + ", '" + name + "', " + to_string(age) + ");";
+    string sql = "INSERT INTO students (id, name, age) VALUES (" + program + ", '" + addNo + ", '" + to_string(section) + ", '" + to_string(id) + ", '" + name + "', " + to_string(age) + ");";
     char *errMsg = 0;
     if (sqlite3_exec(db, sql.c_str(), 0, 0, &errMsg) != SQLITE_OK)
     {
